@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="615.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.PostDetailViewController">
+   <children>
+      <HBox prefHeight="49.0" prefWidth="600.0">
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#backToMainWindow" prefHeight="41.0" prefWidth="211.0" text="Back to Main Window">
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Button>
+            <Region prefHeight="27.0" prefWidth="61.0" HBox.hgrow="SOMETIMES" />
+            <Label fx:id="titleLabel" prefHeight="54.0" prefWidth="359.0" text="A title for this window" HBox.hgrow="SOMETIMES">
+               <HBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="247.0" prefWidth="600.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="256.0" prefWidth="216.0" HBox.hgrow="SOMETIMES">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="202.0" fitWidth="258.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Button fx:id="uploadImageButton" alignment="CENTER" mnemonicParsing="false" onAction="#uploadImage" text="Upload Image">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox prefHeight="264.0" prefWidth="349.0">
+               <children>
+                  <GridPane fx:id="gridPane" prefHeight="321.0" prefWidth="316.0" VBox.vgrow="SOMETIMES">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="158.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="158.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+                  <HBox alignment="CENTER" prefHeight="104.0" prefWidth="316.0" VBox.vgrow="SOMETIMES">
+                     <children>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#closePost" text="Close Post">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#deletePost" text="Delete Post">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#savePost" text="Save edit">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="165.0" prefWidth="615.0">
+         <children>
+            <Region prefHeight="84.0" prefWidth="323.0" HBox.hgrow="SOMETIMES" />
+            <Label fx:id="errorLabel" alignment="TOP_LEFT" prefHeight="136.0" prefWidth="293.0" />
+         </children>
+      </HBox>
+      <TableView fx:id="tableView" prefHeight="198.0" prefWidth="615.0" />
+   </children>
+</VBox>

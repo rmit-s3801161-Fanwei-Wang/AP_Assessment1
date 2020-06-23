@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="897.0" prefWidth="991.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.MainWindowController">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar VBox.vgrow="ALWAYS">
+               <menus>
+                  <Menu mnemonicParsing="false" text="UniLink">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#displayDeveloperInfo" text="Developer Information" />
+                        <MenuItem mnemonicParsing="false" onAction="#quitUniLink" text="Quit UniLink" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Data">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#exportData" text="Export" />
+                        <MenuItem mnemonicParsing="false" onAction="#importData" text="Import" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <HBox spacing="10.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="newEventButton" mnemonicParsing="false" onAction="#createNewEvent" prefHeight="27.0" prefWidth="109.0" text="New Event Post">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="newSaleButton" mnemonicParsing="false" onAction="#createNewSale" prefHeight="27.0" prefWidth="109.0" text="New Sale Post" />
+                  <Button fx:id="newJobButton" mnemonicParsing="false" onAction="#createNewJob" prefHeight="27.0" prefWidth="109.0" text="New Job Post" />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label text="Type:">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <ChoiceBox fx:id="typeChoiceBox" styleClass="All" />
+                  <Label text="Status:">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <ChoiceBox fx:id="statusChoiceBox" />
+                  <Label text="Creator:">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <ChoiceBox fx:id="creatorChoiceBox" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="100.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <Label fx:id="titleLabel" prefHeight="29.0" prefWidth="233.0" text="Hi, student. Here is the post list." />
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label fx:id="currentUserIDLabel" prefHeight="19.0" prefWidth="119.0" text="ID of the current user" />
+                  <Button alignment="TOP_CENTER" mnemonicParsing="false" onAction="#logout" prefHeight="29.0" prefWidth="64.0" text="Logout" textOverrun="WORD_ELLIPSIS" />
+               </children>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <ListView fx:id="postInfoListView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
